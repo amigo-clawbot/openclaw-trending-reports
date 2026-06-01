@@ -3,6 +3,16 @@
 Public bilingual trend reports generated from public GitHub and Hacker News
 metadata.
 
+## Web
+
+GitHub Pages URL, after Pages is enabled for `main` / root:
+
+- <https://amigo-clawbot.github.io/openclaw-trending-reports/>
+
+Repository HTML source:
+
+- [index.html](index.html)
+
 ## Scope
 
 This repository contains sanitized public reports only.
@@ -24,7 +34,10 @@ Excluded:
 
 ## Reports
 
-- [2026-06-01](reports/2026-06-01.md)
+2026-06-01:
+
+- [English](reports/en/2026-06-01.md)
+- [中文](reports/zh/2026-06-01.md)
 
 ## Boundary
 
