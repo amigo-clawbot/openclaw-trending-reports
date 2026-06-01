@@ -51,11 +51,24 @@
       font-size: 17px;
       max-width: 760px;
     }
-    .controls {
+    .toolbar {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
       margin-top: 22px;
+    }
+    .report-nav,
+    .settings,
+    .segmented {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+    .settings {
+      justify-content: flex-end;
     }
     .button {
       display: inline-flex;
@@ -70,10 +83,39 @@
       cursor: pointer;
       font: inherit;
     }
+    .segmented {
+      gap: 0;
+      padding: 2px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+    }
+    .segmented .button {
+      min-height: 32px;
+      border: 0;
+      border-radius: 6px;
+      background: transparent;
+    }
     .button[aria-pressed="true"] {
       border-color: var(--accent);
       color: white;
       background: var(--accent);
+    }
+    .report-nav .button[aria-current="page"],
+    .segmented .button[aria-current="page"] {
+      color: white;
+      background: var(--accent);
+    }
+    @media (max-width: 640px) {
+      .toolbar,
+      .settings {
+        align-items: stretch;
+        justify-content: flex-start;
+      }
+      .report-nav,
+      .settings {
+        width: 100%;
+      }
     }
     [hidden] { display: none !important; }
     section { margin: 28px 0; }
@@ -149,13 +191,23 @@
     <h1 data-lang="zh" hidden>OpenClaw 公开趋势报告</h1>
     <p class="subtitle" data-lang="en">Public trend triage from GitHub Trending and Hacker News. Public metadata only; no private scoring weights or internal context.</p>
     <p class="subtitle" data-lang="zh" hidden>来自 GitHub Trending 和 Hacker News 的公开趋势初筛。仅使用公开元数据，不包含私有评分权重或内部上下文。</p>
-    <div class="controls" aria-label="Language switcher">
-      <button class="button" type="button" data-switch="en" aria-pressed="true">English</button>
-      <button class="button" type="button" data-switch="zh" aria-pressed="false">中文</button>
-      <a class="button" href="weekly.html" data-lang="en">Weekly</a>
-      <a class="button" href="weekly.html" data-lang="zh" hidden>周报</a>
-      <a class="button" href="web3.html" data-lang="en">Web3</a>
-      <a class="button" href="web3.html" data-lang="zh" hidden>Web3</a>
+    <div class="toolbar" aria-label="Report controls">
+      <nav class="report-nav" aria-label="Report type">
+        <a class="button" href="index.html" aria-current="page">Tech</a>
+        <a class="button" href="web3.html">Web3</a>
+      </nav>
+      <div class="settings">
+        <div class="segmented" aria-label="Report period">
+          <span class="button" aria-current="page" data-lang="en">Daily</span>
+          <span class="button" aria-current="page" data-lang="zh" hidden>日报</span>
+          <a class="button" href="weekly.html" data-lang="en">Weekly</a>
+          <a class="button" href="weekly.html" data-lang="zh" hidden>周报</a>
+        </div>
+        <div class="segmented" aria-label="Language switcher">
+          <button class="button" type="button" data-switch="en" aria-pressed="true">EN</button>
+          <button class="button" type="button" data-switch="zh" aria-pressed="false">中文</button>
+        </div>
+      </div>
     </div>
   </header>
   <main>
@@ -605,8 +657,8 @@
     </div>
   </main>
   <footer>
-    <p data-lang="en">Generated 2026-06-01T08:01:34Z. Popularity and discussion volume are weak signals; this is a triage feed, not an endorsement.</p>
-    <p data-lang="zh" hidden>生成时间：2026-06-01T08:01:34Z。热度和讨论量只是弱信号；本页面用于初筛，不代表推荐或背书。</p>
+    <p data-lang="en">Generated 2026-06-01T08:54:56Z. Popularity and discussion volume are weak signals; this is a triage feed, not an endorsement.</p>
+    <p data-lang="zh" hidden>生成时间：2026-06-01T08:54:56Z。热度和讨论量只是弱信号；本页面用于初筛，不代表推荐或背书。</p>
   </footer>
   <script>
     const STORAGE_KEY = 'openclaw-report-language';

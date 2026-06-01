@@ -51,9 +51,27 @@
       font-size: 17px;
       max-width: 820px;
     }
-    .controls, .links {
+    .toolbar {
       display: flex;
       flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-top: 22px;
+    }
+    .report-nav,
+    .settings,
+    .segmented,
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+    .settings {
+      justify-content: flex-end;
+    }
+    .links {
       gap: 10px;
       margin-top: 22px;
     }
@@ -70,10 +88,39 @@
       cursor: pointer;
       font: inherit;
     }
+    .segmented {
+      gap: 0;
+      padding: 2px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+    }
+    .segmented .button {
+      min-height: 32px;
+      border: 0;
+      border-radius: 6px;
+      background: transparent;
+    }
     .button[aria-pressed="true"] {
       border-color: var(--accent);
       color: white;
       background: var(--accent);
+    }
+    .report-nav .button[aria-current="page"],
+    .segmented .button[aria-current="page"] {
+      color: white;
+      background: var(--accent);
+    }
+    @media (max-width: 640px) {
+      .toolbar,
+      .settings {
+        align-items: stretch;
+        justify-content: flex-start;
+      }
+      .report-nav,
+      .settings {
+        width: 100%;
+      }
     }
     [hidden] { display: none !important; }
     section { margin: 28px 0; }
@@ -145,11 +192,23 @@
     <h1 data-lang="zh" hidden>OpenClaw 周度趋势报告</h1>
     <p class="subtitle" data-lang="en">Public weekly trend triage from GitHub Trending and Hacker News. Public metadata only.</p>
     <p class="subtitle" data-lang="zh" hidden>来自 GitHub Trending 和 Hacker News 的公开周度趋势初筛。仅使用公开元数据。</p>
-    <div class="controls" aria-label="Language switcher">
-      <button class="button" type="button" data-switch="en" aria-pressed="true">English</button>
-      <button class="button" type="button" data-switch="zh" aria-pressed="false">中文</button>
-      <a class="button" href="index.html" data-lang="en">Daily</a>
-      <a class="button" href="index.html" data-lang="zh" hidden>日报</a>
+    <div class="toolbar" aria-label="Report controls">
+      <nav class="report-nav" aria-label="Report type">
+        <a class="button" href="index.html" aria-current="page">Tech</a>
+        <a class="button" href="web3.html">Web3</a>
+      </nav>
+      <div class="settings">
+        <div class="segmented" aria-label="Report period">
+          <a class="button" href="index.html" data-lang="en">Daily</a>
+          <a class="button" href="index.html" data-lang="zh" hidden>日报</a>
+          <span class="button" aria-current="page" data-lang="en">Weekly</span>
+          <span class="button" aria-current="page" data-lang="zh" hidden>周报</span>
+        </div>
+        <div class="segmented" aria-label="Language switcher">
+          <button class="button" type="button" data-switch="en" aria-pressed="true">EN</button>
+          <button class="button" type="button" data-switch="zh" aria-pressed="false">中文</button>
+        </div>
+      </div>
     </div>
   </header>
   <main>
@@ -168,7 +227,7 @@
                 <div><dt>Category</dt><dd>open-source</dd></div>
                 <div><dt>Language</dt><dd>typescript</dd></div>
                 <div><dt>Weekly stars</dt><dd>22750</dd></div>
-                <div><dt>Total stars</dt><dd>47860</dd></div>
+                <div><dt>Total stars</dt><dd>47917</dd></div>
               </dl>
             </article>
 <article class="card">
@@ -179,7 +238,7 @@
                 <div><dt>Category</dt><dd>ai-agents</dd></div>
                 <div><dt>Language</dt><dd>python</dd></div>
                 <div><dt>Weekly stars</dt><dd>15955</dd></div>
-                <div><dt>Total stars</dt><dd>75692</dd></div>
+                <div><dt>Total stars</dt><dd>75872</dd></div>
               </dl>
             </article>
 <article class="card">
@@ -190,7 +249,7 @@
                 <div><dt>Category</dt><dd>ai-agents</dd></div>
                 <div><dt>Language</dt><dd>typescript</dd></div>
                 <div><dt>Weekly stars</dt><dd>13925</dd></div>
-                <div><dt>Total stars</dt><dd>35976</dd></div>
+                <div><dt>Total stars</dt><dd>36064</dd></div>
               </dl>
             </article>
 <article class="card">
@@ -201,7 +260,7 @@
                 <div><dt>Category</dt><dd>open-source</dd></div>
                 <div><dt>Language</dt><dd>python</dd></div>
                 <div><dt>Weekly stars</dt><dd>10586</dd></div>
-                <div><dt>Total stars</dt><dd>26234</dd></div>
+                <div><dt>Total stars</dt><dd>26292</dd></div>
               </dl>
             </article>
 <article class="card">
@@ -212,7 +271,7 @@
                 <div><dt>Category</dt><dd>open-source</dd></div>
                 <div><dt>Language</dt><dd>python</dd></div>
                 <div><dt>Weekly stars</dt><dd>9353</dd></div>
-                <div><dt>Total stars</dt><dd>136085</dd></div>
+                <div><dt>Total stars</dt><dd>136231</dd></div>
               </dl>
             </article>
 <article class="card">
@@ -223,7 +282,7 @@
                 <div><dt>Category</dt><dd>ai-agents</dd></div>
                 <div><dt>Language</dt><dd>rust</dd></div>
                 <div><dt>Weekly stars</dt><dd>6888</dd></div>
-                <div><dt>Total stars</dt><dd>87201</dd></div>
+                <div><dt>Total stars</dt><dd>87296</dd></div>
               </dl>
             </article>
 <article class="card">
@@ -234,7 +293,7 @@
                 <div><dt>Category</dt><dd>open-source</dd></div>
                 <div><dt>Language</dt><dd>python</dd></div>
                 <div><dt>Weekly stars</dt><dd>4944</dd></div>
-                <div><dt>Total stars</dt><dd>18510</dd></div>
+                <div><dt>Total stars</dt><dd>18521</dd></div>
               </dl>
             </article>
 <article class="card">
@@ -245,7 +304,7 @@
                 <div><dt>Category</dt><dd>ai-agents</dd></div>
                 <div><dt>Language</dt><dd>python</dd></div>
                 <div><dt>Weekly stars</dt><dd>4896</dd></div>
-                <div><dt>Total stars</dt><dd>13060</dd></div>
+                <div><dt>Total stars</dt><dd>13075</dd></div>
               </dl>
             </article>
 <article class="card">
@@ -256,7 +315,7 @@
                 <div><dt>Category</dt><dd>ai-agents</dd></div>
                 <div><dt>Language</dt><dd>python</dd></div>
                 <div><dt>Weekly stars</dt><dd>4653</dd></div>
-                <div><dt>Total stars</dt><dd>144870</dd></div>
+                <div><dt>Total stars</dt><dd>144908</dd></div>
               </dl>
             </article>
 <article class="card">
@@ -267,7 +326,7 @@
                 <div><dt>Category</dt><dd>open-source</dd></div>
                 <div><dt>Language</dt><dd>python</dd></div>
                 <div><dt>Weekly stars</dt><dd>4646</dd></div>
-                <div><dt>Total stars</dt><dd>25378</dd></div>
+                <div><dt>Total stars</dt><dd>25420</dd></div>
               </dl>
             </article></div>
       </section>
@@ -316,8 +375,8 @@
               <h3><a href="https://news.ycombinator.com/item?id=48309492">Websites have a new way to spy on visitors: analyzing their SSD activity</a></h3>
               <p>The article describes a browser side channel that can infer information from storage-device activity. The signal matters because it expands fingerprinting and privacy risk beyond traditional cookies or network identifiers.</p>
               <dl>
-                <div><dt>Points</dt><dd>167</dd></div>
-                <div><dt>Comments</dt><dd>42</dd></div>
+                <div><dt>Points</dt><dd>173</dd></div>
+                <div><dt>Comments</dt><dd>43</dd></div>
                 <div><dt>Topic</dt><dd>security</dd></div>
               </dl>
               <div class="links">
@@ -342,7 +401,7 @@
               <h3><a href="https://news.ycombinator.com/item?id=48319524">Show HN: Zot – Yet another coding agent harness</a></h3>
               <p>Zot is a small terminal coding agent shipped as a static Go binary. It intentionally avoids a large plugin ecosystem, making it closer to a compact agent harness than a full development platform.</p>
               <dl>
-                <div><dt>Points</dt><dd>102</dd></div>
+                <div><dt>Points</dt><dd>103</dd></div>
                 <div><dt>Comments</dt><dd>78</dd></div>
                 <div><dt>Topic</dt><dd>agent</dd></div>
               </dl>
@@ -355,7 +414,7 @@
               <h3><a href="https://news.ycombinator.com/item?id=48321089">Security Envelope Pattern collection – S.E.C.R.E.T</a></h3>
               <p>The site collects and classifies security envelope patterns as a visual taxonomy. It is more of a design and archival reference than a conventional security tool.</p>
               <dl>
-                <div><dt>Points</dt><dd>93</dd></div>
+                <div><dt>Points</dt><dd>94</dd></div>
                 <div><dt>Comments</dt><dd>9</dd></div>
                 <div><dt>Topic</dt><dd>security</dd></div>
               </dl>
@@ -381,7 +440,7 @@
               <h3><a href="https://news.ycombinator.com/item?id=48347155">Talk Is Cheap: The Operational Impact of LLM Use</a></h3>
               <p>The essay argues that LLMs lower the cost of generating text but can add operational overhead through review, coordination, and reliability work. Its point is that cheaper language does not automatically mean cheaper execution.</p>
               <dl>
-                <div><dt>Points</dt><dd>32</dd></div>
+                <div><dt>Points</dt><dd>33</dd></div>
                 <div><dt>Comments</dt><dd>18</dd></div>
                 <div><dt>Topic</dt><dd>llm</dd></div>
               </dl>
@@ -420,7 +479,7 @@
                 <div><dt>分类</dt><dd>开源基础设施</dd></div>
                 <div><dt>语言</dt><dd>typescript</dd></div>
                 <div><dt>本周星标</dt><dd>22750</dd></div>
-                <div><dt>总星标</dt><dd>47860</dd></div>
+                <div><dt>总星标</dt><dd>47917</dd></div>
               </dl>
             </article>
 <article class="card">
@@ -431,7 +490,7 @@
                 <div><dt>分类</dt><dd>AI 代理</dd></div>
                 <div><dt>语言</dt><dd>python</dd></div>
                 <div><dt>本周星标</dt><dd>15955</dd></div>
-                <div><dt>总星标</dt><dd>75692</dd></div>
+                <div><dt>总星标</dt><dd>75872</dd></div>
               </dl>
             </article>
 <article class="card">
@@ -442,7 +501,7 @@
                 <div><dt>分类</dt><dd>AI 代理</dd></div>
                 <div><dt>语言</dt><dd>typescript</dd></div>
                 <div><dt>本周星标</dt><dd>13925</dd></div>
-                <div><dt>总星标</dt><dd>35976</dd></div>
+                <div><dt>总星标</dt><dd>36064</dd></div>
               </dl>
             </article>
 <article class="card">
@@ -453,7 +512,7 @@
                 <div><dt>分类</dt><dd>开源基础设施</dd></div>
                 <div><dt>语言</dt><dd>python</dd></div>
                 <div><dt>本周星标</dt><dd>10586</dd></div>
-                <div><dt>总星标</dt><dd>26234</dd></div>
+                <div><dt>总星标</dt><dd>26292</dd></div>
               </dl>
             </article>
 <article class="card">
@@ -464,7 +523,7 @@
                 <div><dt>分类</dt><dd>开源基础设施</dd></div>
                 <div><dt>语言</dt><dd>python</dd></div>
                 <div><dt>本周星标</dt><dd>9353</dd></div>
-                <div><dt>总星标</dt><dd>136085</dd></div>
+                <div><dt>总星标</dt><dd>136231</dd></div>
               </dl>
             </article>
 <article class="card">
@@ -475,7 +534,7 @@
                 <div><dt>分类</dt><dd>AI 代理</dd></div>
                 <div><dt>语言</dt><dd>rust</dd></div>
                 <div><dt>本周星标</dt><dd>6888</dd></div>
-                <div><dt>总星标</dt><dd>87201</dd></div>
+                <div><dt>总星标</dt><dd>87296</dd></div>
               </dl>
             </article>
 <article class="card">
@@ -486,7 +545,7 @@
                 <div><dt>分类</dt><dd>开源基础设施</dd></div>
                 <div><dt>语言</dt><dd>python</dd></div>
                 <div><dt>本周星标</dt><dd>4944</dd></div>
-                <div><dt>总星标</dt><dd>18510</dd></div>
+                <div><dt>总星标</dt><dd>18521</dd></div>
               </dl>
             </article>
 <article class="card">
@@ -497,7 +556,7 @@
                 <div><dt>分类</dt><dd>AI 代理</dd></div>
                 <div><dt>语言</dt><dd>python</dd></div>
                 <div><dt>本周星标</dt><dd>4896</dd></div>
-                <div><dt>总星标</dt><dd>13060</dd></div>
+                <div><dt>总星标</dt><dd>13075</dd></div>
               </dl>
             </article>
 <article class="card">
@@ -508,7 +567,7 @@
                 <div><dt>分类</dt><dd>AI 代理</dd></div>
                 <div><dt>语言</dt><dd>python</dd></div>
                 <div><dt>本周星标</dt><dd>4653</dd></div>
-                <div><dt>总星标</dt><dd>144870</dd></div>
+                <div><dt>总星标</dt><dd>144908</dd></div>
               </dl>
             </article>
 <article class="card">
@@ -519,7 +578,7 @@
                 <div><dt>分类</dt><dd>开源基础设施</dd></div>
                 <div><dt>语言</dt><dd>python</dd></div>
                 <div><dt>本周星标</dt><dd>4646</dd></div>
-                <div><dt>总星标</dt><dd>25378</dd></div>
+                <div><dt>总星标</dt><dd>25420</dd></div>
               </dl>
             </article></div>
       </section>
@@ -568,8 +627,8 @@
               <h3><a href="https://news.ycombinator.com/item?id=48309492">网站出现新的访客追踪方式：分析 SSD 活动</a></h3>
               <p>文章描述了一种通过存储设备活动推断访客行为的浏览器侧信道。它把隐私风险从传统 cookie、网络标识扩展到了硬件活动信号。</p>
               <dl>
-                <div><dt>点数</dt><dd>167</dd></div>
-                <div><dt>评论</dt><dd>42</dd></div>
+                <div><dt>点数</dt><dd>173</dd></div>
+                <div><dt>评论</dt><dd>43</dd></div>
                 <div><dt>主题</dt><dd>安全</dd></div>
               </dl>
               <div class="links">
@@ -594,7 +653,7 @@
               <h3><a href="https://news.ycombinator.com/item?id=48319524">Show HN：Zot，又一个编码代理运行框架</a></h3>
               <p>Zot 是一个小型终端编码代理，以静态 Go 二进制发布。它刻意避开大型插件生态，更接近轻量 agent harness，而不是完整开发平台。</p>
               <dl>
-                <div><dt>点数</dt><dd>102</dd></div>
+                <div><dt>点数</dt><dd>103</dd></div>
                 <div><dt>评论</dt><dd>78</dd></div>
                 <div><dt>主题</dt><dd>AI 代理</dd></div>
               </dl>
@@ -607,7 +666,7 @@
               <h3><a href="https://news.ycombinator.com/item?id=48321089">安全信封模式集合：S.E.C.R.E.T</a></h3>
               <p>该站点收集并分类安全信封图案，形成视觉 taxonomy。它更像设计/档案参考，而不是常规安全工具。</p>
               <dl>
-                <div><dt>点数</dt><dd>93</dd></div>
+                <div><dt>点数</dt><dd>94</dd></div>
                 <div><dt>评论</dt><dd>9</dd></div>
                 <div><dt>主题</dt><dd>安全</dd></div>
               </dl>
@@ -633,7 +692,7 @@
               <h3><a href="https://news.ycombinator.com/item?id=48347155">廉价对话：LLM 使用的运营影响</a></h3>
               <p>文章认为 LLM 降低了生成文本的成本，但会通过审查、协调和可靠性工作增加运营负担。重点是语言更便宜，不等于执行一定更便宜。</p>
               <dl>
-                <div><dt>点数</dt><dd>32</dd></div>
+                <div><dt>点数</dt><dd>33</dd></div>
                 <div><dt>评论</dt><dd>18</dd></div>
                 <div><dt>主题</dt><dd>LLM</dd></div>
               </dl>
@@ -659,8 +718,8 @@
     </div>
   </main>
   <footer>
-    <p data-lang="en">Generated 2026-06-01T08:01:56Z. Popularity and discussion volume are weak signals; this is a triage feed, not an endorsement.</p>
-    <p data-lang="zh" hidden>生成时间：2026-06-01T08:01:56Z。热度和讨论量只是弱信号；本页面用于初筛，不代表推荐或背书。</p>
+    <p data-lang="en">Generated 2026-06-01T08:55:11Z. Popularity and discussion volume are weak signals; this is a triage feed, not an endorsement.</p>
+    <p data-lang="zh" hidden>生成时间：2026-06-01T08:55:11Z。热度和讨论量只是弱信号；本页面用于初筛，不代表推荐或背书。</p>
   </footer>
   <script>
     const STORAGE_KEY = 'openclaw-report-language';

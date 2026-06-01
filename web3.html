@@ -13,9 +13,16 @@
     header { padding:48px 0 24px; }
     h1 { margin:0 0 8px; font-size:clamp(32px, 5vw, 56px); line-height:1.05; letter-spacing:0; }
     .subtitle,.coverage { margin:0; color:var(--muted); font-size:17px; max-width:840px; }
-    .controls,.links { display:flex; flex-wrap:wrap; gap:10px; margin-top:22px; }
+    .toolbar { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:14px; margin-top:22px; }
+    .report-nav,.settings,.segmented,.links { display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
+    .settings { justify-content:flex-end; }
+    .links { gap:10px; margin-top:22px; }
     .button { display:inline-flex; align-items:center; min-height:38px; padding:8px 12px; border:1px solid var(--line); border-radius:6px; color:var(--text); text-decoration:none; background:var(--panel); cursor:pointer; font:inherit; }
+    .segmented { gap:0; padding:2px; border:1px solid var(--line); border-radius:8px; background:var(--panel); }
+    .segmented .button { min-height:32px; border:0; border-radius:6px; background:transparent; }
     .button[aria-pressed="true"] { border-color:var(--accent); color:white; background:var(--accent); }
+    .report-nav .button[aria-current="page"],.segmented .button[aria-current="page"] { color:white; background:var(--accent); }
+    @media (max-width:640px) { .toolbar,.settings { align-items:stretch; justify-content:flex-start; } .report-nav,.settings { width:100%; } }
     [hidden] { display:none !important; }
     section { margin:28px 0; }
     h2 { margin:0 0 14px; font-size:22px; letter-spacing:0; }
@@ -37,13 +44,23 @@
     <h1 data-lang="zh" hidden>OpenClaw Web3 日报</h1>
     <p class="subtitle" data-lang="en">Public Web3 news triage with market and on-chain context.</p>
     <p class="subtitle" data-lang="zh" hidden>结合公开新闻、市场数据和链上数据的 Web3 热点初筛。</p>
-    <div class="controls" aria-label="Language switcher">
-      <button class="button" type="button" data-switch="en" aria-pressed="true">English</button>
-      <button class="button" type="button" data-switch="zh" aria-pressed="false">中文</button>
-      <a class="button" href="web3-weekly.html" data-lang="en">Weekly</a>
-      <a class="button" href="web3-weekly.html" data-lang="zh" hidden>周报</a>
-      <a class="button" href="index.html" data-lang="en">Tech Trends</a>
-      <a class="button" href="index.html" data-lang="zh" hidden>技术趋势</a>
+    <div class="toolbar" aria-label="Report controls">
+      <nav class="report-nav" aria-label="Report type">
+        <a class="button" href="index.html">Tech</a>
+        <a class="button" href="web3.html" aria-current="page">Web3</a>
+      </nav>
+      <div class="settings">
+        <div class="segmented" aria-label="Report period">
+          <span class="button" aria-current="page" data-lang="en">Daily</span>
+          <span class="button" aria-current="page" data-lang="zh" hidden>日报</span>
+          <a class="button" href="web3-weekly.html" data-lang="en">Weekly</a>
+          <a class="button" href="web3-weekly.html" data-lang="zh" hidden>周报</a>
+        </div>
+        <div class="segmented" aria-label="Language switcher">
+          <button class="button" type="button" data-switch="en" aria-pressed="true">EN</button>
+          <button class="button" type="button" data-switch="zh" aria-pressed="false">中文</button>
+        </div>
+      </div>
     </div>
   </header>
   <main>
@@ -51,7 +68,7 @@
       <section><h2>Coverage</h2><p class="coverage">Daily report for 2026-06-01 UTC. Sources: CoinDesk, The Block, Decrypt, Cointelegraph, CoinGecko, DeFiLlama.</p></section>
       <section><h2>Market / On-Chain Signals</h2><div class="grid"><article class="card metric">
               <h3>CoinGecko trending coins</h3>
-              <p>Solstice, Hyperliquid, LAB, Portal, Venice Token</p>
+              <p>LAB, Hyperliquid, Solstice, Portal, Venice Token</p>
               <dl>
                 <div><dt>Source</dt><dd>CoinGecko</dd></div>
               </dl>
@@ -66,6 +83,16 @@
               <p>Stablecoin supply is a liquidity proxy for crypto market plumbing.</p>
             </article></div></section>
       <section><h2>Hot News</h2><div class="grid"><article class="card">
+              <h3><a href="https://www.theblock.co/post/403142/digital-euro-stablecoin-risks-ecb?utm_source=rss&amp;utm_medium=rss">Digital euro is key to counter stablecoin risks, says ECB’s Schnabel</a></h3>
+              <p>Isabel Schnabel, an ECB board member, said Monday that central banks should respond to stablecoin risks with strong regulation and CBDCs.</p>
+              <dl>
+                <div><dt>Source</dt><dd>The Block</dd></div>
+                <div><dt>Category</dt><dd>regulation-enforcement</dd></div>
+                <div><dt>Published</dt><dd>2026-06-01</dd></div>
+              </dl>
+              <div class="links"><a href="https://www.theblock.co/post/403142/digital-euro-stablecoin-risks-ecb?utm_source=rss&amp;utm_medium=rss">Article</a></div>
+            </article>
+<article class="card">
               <h3><a href="https://www.coindesk.com/tech/2026/06/01/whitehat-developer-unlocks-usd2-million-stuck-in-a-2016-ethereum-ico-contract-for-nine-years">Whitehat developer unlocks $2 million stuck in a 2016 Ethereum ICO contract for nine years</a></h3>
               <p>A security researcher who goes by 0xflorent worked with the team behind a 2016 Ethereum (ETH) ICO contract to unlock about $2 million in ether that had sat trapped for nine years, in a coordinated whitehat recovery that exploited an integer-overflow flaw the original developers had never patched. The contract belongs.</p>
               <dl>
@@ -86,7 +113,7 @@
               <div class="links"><a href="https://www.coindesk.com/markets/2026/06/01/bitcoin-extends-slide-as-spot-etf-outflows-hit-a-record-while-wall-street-rips-on-ai">Article</a></div>
             </article>
 <article class="card">
-              <h3><a href="https://www.coindesk.com/markets/2026/06/01/aave-overhauls-listing-standards-after-usd230-million-rseth-exploit-exposed-bridge-risks">Aave overhauls listing standards after $230 Million rsETH exploit exposed bridge risks</a></h3>
+              <h3><a href="https://www.coindesk.com/markets/2026/06/01/aave-overhauls-listing-standards-after-usd230-million-rseth-exploit-exposed-bridge-risks">Aave overhauls listing standards after $230 million rsETH exploit exposed bridge risks</a></h3>
               <p>The most expensive DeFi attack of 2026 began with KelpDAO&#x27;s restaked ether (rsETH) bridge, not a bug in Aave&#x27;s code. That, the lending protocol argues in an official postmortem published this week , is precisely why the industry needs to rethink how it measures risk.</p>
               <dl>
                 <div><dt>Source</dt><dd>CoinDesk</dd></div>
@@ -124,6 +151,16 @@
                 <div><dt>Published</dt><dd>2026-06-01</dd></div>
               </dl>
               <div class="links"><a href="https://cointelegraph.com/news/whitehat-helps-recover-2m-from-2016-ico-smart-contract?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound">Article</a></div>
+            </article>
+<article class="card">
+              <h3><a href="https://www.coindesk.com/markets/2026/06/01/u-s-congress-returns-as-genius-comments-periods-close-jobs-report-crypto-week-ahead">U.S. Congress returns as GENIUS comments periods close, jobs report: Crypto Week Ahead</a></h3>
+              <p>Crypto Week Ahead is a comprehensive list of what&#x27;s coming up in the world of cryptocurrencies and blockchain, as well as the major macroeconomic events that will influence digital asset markets. The first week of June may turn crypto&#x27;s 2025 policy wins into hard deadlines.</p>
+              <dl>
+                <div><dt>Source</dt><dd>CoinDesk</dd></div>
+                <div><dt>Category</dt><dd>regulation-enforcement</dd></div>
+                <div><dt>Published</dt><dd>2026-06-01</dd></div>
+              </dl>
+              <div class="links"><a href="https://www.coindesk.com/markets/2026/06/01/u-s-congress-returns-as-genius-comments-periods-close-jobs-report-crypto-week-ahead">Article</a></div>
             </article>
 <article class="card">
               <h3><a href="https://cointelegraph.com/news/wintermute-is-entering-prediction-markets-as-a-liquidity-provider?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound">Wintermute to bring liquidity to booming prediction markets sector</a></h3>
@@ -210,7 +247,7 @@
       <section><h2>覆盖范围</h2><p class="coverage">UTC 日期 2026-06-01 日报。来源：CoinDesk、The Block、Decrypt、Cointelegraph、CoinGecko、DeFiLlama。</p></section>
       <section><h2>市场 / 链上信号</h2><div class="grid"><article class="card metric">
               <h3>CoinGecko trending coins</h3>
-              <p>Solstice, Hyperliquid, LAB, Portal, Venice Token</p>
+              <p>LAB, Hyperliquid, Solstice, Portal, Venice Token</p>
               <dl>
                 <div><dt>来源</dt><dd>CoinGecko</dd></div>
               </dl>
@@ -225,6 +262,16 @@
               <p>稳定币供给可作为加密市场资金管道的流动性代理。</p>
             </article></div></section>
       <section><h2>热点新闻</h2><div class="grid"><article class="card">
+              <h3><a href="https://www.theblock.co/post/403142/digital-euro-stablecoin-risks-ecb?utm_source=rss&amp;utm_medium=rss">欧洲央行 Schnabel：数字欧元是应对稳定币风险的关键</a></h3>
+              <p>欧洲央行执委 Schnabel 表示，央行应通过强监管和 CBDC 应对稳定币风险。该观点把数字欧元放在支付主权和稳定币监管框架的核心位置。</p>
+              <dl>
+                <div><dt>来源</dt><dd>The Block</dd></div>
+                <div><dt>分类</dt><dd>监管/执法</dd></div>
+                <div><dt>发布时间</dt><dd>2026-06-01</dd></div>
+              </dl>
+              <div class="links"><a href="https://www.theblock.co/post/403142/digital-euro-stablecoin-risks-ecb?utm_source=rss&amp;utm_medium=rss">原文</a></div>
+            </article>
+<article class="card">
               <h3><a href="https://www.coindesk.com/tech/2026/06/01/whitehat-developer-unlocks-usd2-million-stuck-in-a-2016-ethereum-ico-contract-for-nine-years">白帽开发者解锁 2016 年 ICO 合约中冻结九年的 200 万美元</a></h3>
               <p>白帽研究员 0xflorent 与 2016 年 Ethereum ICO 合约团队协作，利用未修复的整数溢出问题，解锁了冻结九年的约 200 万美元 ETH。事件说明早期智能合约遗留风险仍可能在多年后被重新激活。</p>
               <dl>
@@ -283,6 +330,16 @@
                 <div><dt>发布时间</dt><dd>2026-06-01</dd></div>
               </dl>
               <div class="links"><a href="https://cointelegraph.com/news/whitehat-helps-recover-2m-from-2016-ico-smart-contract?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound">原文</a></div>
+            </article>
+<article class="card">
+              <h3><a href="https://www.coindesk.com/markets/2026/06/01/u-s-congress-returns-as-genius-comments-periods-close-jobs-report-crypto-week-ahead">美国国会复会、GENIUS 评论期结束和就业报告构成本周加密政策看点</a></h3>
+              <p>本周加密市场同时面对美国国会复会、GENIUS 相关评论期结束和就业数据发布。政策窗口和宏观数据可能把此前的监管进展转化为更明确的市场期限。</p>
+              <dl>
+                <div><dt>来源</dt><dd>CoinDesk</dd></div>
+                <div><dt>分类</dt><dd>监管/执法</dd></div>
+                <div><dt>发布时间</dt><dd>2026-06-01</dd></div>
+              </dl>
+              <div class="links"><a href="https://www.coindesk.com/markets/2026/06/01/u-s-congress-returns-as-genius-comments-periods-close-jobs-report-crypto-week-ahead">原文</a></div>
             </article>
 <article class="card">
               <h3><a href="https://cointelegraph.com/news/wintermute-is-entering-prediction-markets-as-a-liquidity-provider?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound">Wintermute 将为快速增长的预测市场提供流动性</a></h3>
@@ -367,8 +424,8 @@
     </div>
   </main>
   <footer>
-    <p data-lang="en">Generated 2026-06-01T08:30:17Z. News and market data are weak signals; this is a triage feed, not an endorsement.</p>
-    <p data-lang="zh" hidden>生成时间：2026-06-01T08:30:17Z。新闻和市场数据都是弱信号；本页面用于初筛，不代表推荐或背书。</p>
+    <p data-lang="en">Generated 2026-06-01T08:57:34Z. News and market data are weak signals; this is a triage feed, not an endorsement.</p>
+    <p data-lang="zh" hidden>生成时间：2026-06-01T08:57:34Z。新闻和市场数据都是弱信号；本页面用于初筛，不代表推荐或背书。</p>
   </footer>
   <script>
     const STORAGE_KEY = 'openclaw-report-language';
