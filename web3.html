@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OpenClaw Web3 Daily Report</title>
+  <style>
+    :root { color-scheme: light dark; --bg:#f7f8fa; --panel:#fff; --text:#1d2430; --muted:#5d6675; --line:#d9dee7; --accent:#0b6bcb; --accent-2:#0f766e; }
+    @media (prefers-color-scheme: dark) { :root { --bg:#101418; --panel:#171d24; --text:#eef2f7; --muted:#a9b4c2; --line:#2b3440; --accent:#62a8ff; --accent-2:#4fd1c5; } }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background:var(--bg); color:var(--text); line-height:1.55; }
+    header, main, footer { width:min(1120px, calc(100% - 32px)); margin:0 auto; }
+    header { padding:48px 0 24px; }
+    h1 { margin:0 0 8px; font-size:clamp(32px, 5vw, 56px); line-height:1.05; letter-spacing:0; }
+    .subtitle,.coverage { margin:0; color:var(--muted); font-size:17px; max-width:840px; }
+    .controls,.links { display:flex; flex-wrap:wrap; gap:10px; margin-top:22px; }
+    .button { display:inline-flex; align-items:center; min-height:38px; padding:8px 12px; border:1px solid var(--line); border-radius:6px; color:var(--text); text-decoration:none; background:var(--panel); cursor:pointer; font:inherit; }
+    .button[aria-pressed="true"] { border-color:var(--accent); color:white; background:var(--accent); }
+    [hidden] { display:none !important; }
+    section { margin:28px 0; }
+    h2 { margin:0 0 14px; font-size:22px; letter-spacing:0; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(270px, 1fr)); gap:14px; }
+    .card { border:1px solid var(--line); border-radius:8px; background:var(--panel); padding:16px; min-height:220px; }
+    .card h3 { margin:0 0 8px; font-size:18px; line-height:1.25; letter-spacing:0; }
+    .card a { color:var(--accent); text-decoration:none; }
+    .card p { margin:0 0 14px; color:var(--muted); }
+    dl { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:8px; margin:0; }
+    dt { color:var(--muted); font-size:12px; }
+    dd { margin:0; font-weight:650; }
+    .links a { color:var(--accent); font-weight:650; text-decoration:none; }
+    footer { padding:24px 0 40px; color:var(--muted); font-size:14px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 data-lang="en">OpenClaw Web3 Daily Report</h1>
+    <h1 data-lang="zh" hidden>OpenClaw Web3 日报</h1>
+    <p class="subtitle" data-lang="en">Public Web3 news triage with market and on-chain context.</p>
+    <p class="subtitle" data-lang="zh" hidden>结合公开新闻、市场数据和链上数据的 Web3 热点初筛。</p>
+    <div class="controls" aria-label="Language switcher">
+      <button class="button" type="button" data-switch="en" aria-pressed="true">English</button>
+      <button class="button" type="button" data-switch="zh" aria-pressed="false">中文</button>
+      <a class="button" href="web3-weekly.html" data-lang="en">Weekly</a>
+      <a class="button" href="web3-weekly.html" data-lang="zh" hidden>周报</a>
+      <a class="button" href="index.html" data-lang="en">Tech Trends</a>
+      <a class="button" href="index.html" data-lang="zh" hidden>技术趋势</a>
+    </div>
+  </header>
+  <main>
+    <div class="view" data-view="en">
+      <section><h2>Coverage</h2><p class="coverage">Daily report for 2026-06-01 UTC. Sources: CoinDesk, The Block, Decrypt, Cointelegraph, CoinGecko, DeFiLlama.</p></section>
+      <section><h2>Market / On-Chain Signals</h2><div class="grid"><article class="card metric">
+              <h3>CoinGecko trending coins</h3>
+              <p>Solstice, Hyperliquid, LAB, Portal, Stellar</p>
+              <dl>
+                <div><dt>Source</dt><dd>CoinGecko</dd></div>
+              </dl>
+              <p>Retail and search momentum proxy; not a quality signal by itself.</p>
+            </article>
+<article class="card metric">
+              <h3>Largest stablecoins</h3>
+              <p>USDT: $187.9B, USDC: $76.0B, USDS: $8.8B</p>
+              <dl>
+                <div><dt>Source</dt><dd>DeFiLlama</dd></div>
+              </dl>
+              <p>Stablecoin supply is a liquidity proxy for crypto market plumbing.</p>
+            </article></div></section>
+      <section><h2>Hot News</h2><div class="grid"><article class="card">
+              <h3><a href="https://www.coindesk.com/tech/2026/06/01/whitehat-developer-unlocks-usd2-million-stuck-in-a-2016-ethereum-ico-contract-for-nine-years">Whitehat developer unlocks $2 million stuck in a 2016 Ethereum ICO contract for nine years</a></h3>
+              <p>A security researcher who goes by 0xflorent worked with the team behind a 2016 Ethereum (ETH) ICO contract to unlock about $2 million in ether that had sat trapped for nine years, in a coordinated whitehat recovery that exploited an integer-overflow flaw the original developers had never patched. The contract belongs.</p>
+              <dl>
+                <div><dt>Source</dt><dd>CoinDesk</dd></div>
+                <div><dt>Category</dt><dd>security-exploits</dd></div>
+                <div><dt>Published</dt><dd>2026-06-01</dd></div>
+              </dl>
+              <div class="links"><a href="https://www.coindesk.com/tech/2026/06/01/whitehat-developer-unlocks-usd2-million-stuck-in-a-2016-ethereum-ico-contract-for-nine-years">Article</a></div>
+            </article>
+<article class="card">
+              <h3><a href="https://www.coindesk.com/markets/2026/06/01/bitcoin-extends-slide-as-spot-etf-outflows-hit-a-record-while-wall-street-rips-on-ai">Bitcoin extends slide as spot ETF outflows hit a record while Wall Street rips on AI</a></h3>
+              <p>A record 10-session, $2.97 billion outflow streak from spot bitcoin ETFs and a fresh rally in oil prices on stalling U.S.-Iran ceasefire talks have kept bitcoin BTC $ 73,038.00 and the wider crypto market under pressure even as Wall Street&#x27;s AI trade pushed global equities to new records in Asian trading Monday. The.</p>
+              <dl>
+                <div><dt>Source</dt><dd>CoinDesk</dd></div>
+                <div><dt>Category</dt><dd>regulation-enforcement</dd></div>
+                <div><dt>Published</dt><dd>2026-06-01</dd></div>
+              </dl>
+              <div class="links"><a href="https://www.coindesk.com/markets/2026/06/01/bitcoin-extends-slide-as-spot-etf-outflows-hit-a-record-while-wall-street-rips-on-ai">Article</a></div>
+            </article>
+<article class="card">
+              <h3><a href="https://www.coindesk.com/markets/2026/06/01/aave-overhauls-listing-standards-after-usd230-million-rseth-exploit-exposed-bridge-risks">Aave overhauls listing standards after $230 Million rsETH exploit exposed bridge risks</a></h3>
+              <p>The most expensive DeFi attack of 2026 began with KelpDAO&#x27;s restaked ether (rsETH) bridge, not a bug in Aave&#x27;s code. That, the lending protocol argues in an official postmortem published this week , is precisely why the industry needs to rethink how it measures risk.</p>
+              <dl>
+                <div><dt>Source</dt><dd>CoinDesk</dd></div>
+                <div><dt>Category</dt><dd>security-exploits</dd></div>
+                <div><dt>Published</dt><dd>2026-06-01</dd></div>
+              </dl>
+              <div class="links"><a href="https://www.coindesk.com/markets/2026/06/01/aave-overhauls-listing-standards-after-usd230-million-rseth-exploit-exposed-bridge-risks">Article</a></div>
+            </article>
+<article class="card">
+              <h3><a href="https://www.coindesk.com/markets/2026/06/01/citi-predicts-the-tokenized-securities-market-will-grow-to-usd5-5-trillion-by-2030">Citi predicts the tokenized securities market will grow to $5.5 trillion by 2030</a></h3>
+              <p>Putting real-world investments onchain, a process called tokenization, is moving out of the testing phase and into everyday business. Citi’s new report Tokenization 2030: Wall Street On-Chain shared with CoinDesk ahead of Proof of Talk in Paris, shows that the global market for thse digital investments sits at just.</p>
+              <dl>
+                <div><dt>Source</dt><dd>CoinDesk</dd></div>
+                <div><dt>Category</dt><dd>market-structure</dd></div>
+                <div><dt>Published</dt><dd>2026-06-01</dd></div>
+              </dl>
+              <div class="links"><a href="https://www.coindesk.com/markets/2026/06/01/citi-predicts-the-tokenized-securities-market-will-grow-to-usd5-5-trillion-by-2030">Article</a></div>
+            </article>
+<article class="card">
+              <h3><a href="https://cointelegraph.com/news/crypto-exploit-losses-fall-by-90-in-may-to-68m-certik?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound">Crypto exploit losses in May fall 90% over month to $68M: CertiK</a></h3>
+              <p>CertiK says May is the third month so far in 2026 to record crypto losses under $100 million. Losses from exploits of crypto platforms fell to $68.3 million in May, down almost 90% from the $650 million lost in April, says crypto security company CertiK.</p>
+              <dl>
+                <div><dt>Source</dt><dd>Cointelegraph</dd></div>
+                <div><dt>Category</dt><dd>security-exploits</dd></div>
+                <div><dt>Published</dt><dd>2026-06-01</dd></div>
+              </dl>
+              <div class="links"><a href="https://cointelegraph.com/news/crypto-exploit-losses-fall-by-90-in-may-to-68m-certik?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound">Article</a></div>
+            </article>
+<article class="card">
+              <h3><a href="https://cointelegraph.com/news/whitehat-helps-recover-2m-from-2016-ico-smart-contract?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound">White hat hacker recovers $2M from faulty 2016 ICO smart contract</a></h3>
+              <p>A white-hat hacker has helped the creators of Hong Coin by showing them how to exploit a flawed admin function on a smart contract and ultimately refund investors after a decade. A pseudonymous white hat hacker has helped recover $2 million worth of Ether locked in a faulty initial coin offering (ICO) smart contract.</p>
+              <dl>
+                <div><dt>Source</dt><dd>Cointelegraph</dd></div>
+                <div><dt>Category</dt><dd>security-exploits</dd></div>
+                <div><dt>Published</dt><dd>2026-06-01</dd></div>
+              </dl>
+              <div class="links"><a href="https://cointelegraph.com/news/whitehat-helps-recover-2m-from-2016-ico-smart-contract?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound">Article</a></div>
+            </article>
+<article class="card">
+              <h3><a href="https://cointelegraph.com/news/wintermute-is-entering-prediction-markets-as-a-liquidity-provider?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound">Wintermute to bring liquidity to booming prediction markets sector</a></h3>
+              <p>Wintermute said it will provide “two-sided markets across event contracts on leading venues,” but did not specify what platforms it was trading on. Crypto liquidity provider and trading company Wintermute says it is providing liquidity on prediction markets as the industry continues to expand.</p>
+              <dl>
+                <div><dt>Source</dt><dd>Cointelegraph</dd></div>
+                <div><dt>Category</dt><dd>market-structure</dd></div>
+                <div><dt>Published</dt><dd>2026-06-01</dd></div>
+              </dl>
+              <div class="links"><a href="https://cointelegraph.com/news/wintermute-is-entering-prediction-markets-as-a-liquidity-provider?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound">Article</a></div>
+            </article>
+<article class="card">
+              <h3><a href="https://cointelegraph.com/news/nydig-ibit-whale-exit-directional-bitcoin-trade?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound">NYDIG suggests $1.3B IBIT sale was whale exiting directional trade</a></h3>
+              <p>NYDIG’s Greg Cipolaro says a sale below market price and giving up millions of dollars for immediate execution indicates a large directional holder exited a trade on BlackRock’s IBIT last week. A $1.26 billion block trade in BlackRock’s iShares Bitcoin Trust (IBIT) made last week was likely a whale making a quick.</p>
+              <dl>
+                <div><dt>Source</dt><dd>Cointelegraph</dd></div>
+                <div><dt>Category</dt><dd>regulation-enforcement</dd></div>
+                <div><dt>Published</dt><dd>2026-06-01</dd></div>
+              </dl>
+              <div class="links"><a href="https://cointelegraph.com/news/nydig-ibit-whale-exit-directional-bitcoin-trade?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound">Article</a></div>
+            </article>
+<article class="card">
+              <h3><a href="https://cointelegraph.com/news/cardano-foundation-cancels-annual-conference-after-failed-funding-vote?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound">Cardano Foundation cancels annual conference after failed funding vote</a></h3>
+              <p>Cardano Foundation has failed at its second attempt to secure funding from Cardano’s community to fund its annual conference. The Cardano Foundation has canceled its 2026 annual conference after its governance community shot down a revised proposal seeking to fund the event with treasury tokens.</p>
+              <dl>
+                <div><dt>Source</dt><dd>Cointelegraph</dd></div>
+                <div><dt>Category</dt><dd>regulation-enforcement</dd></div>
+                <div><dt>Published</dt><dd>2026-06-01</dd></div>
+              </dl>
+              <div class="links"><a href="https://cointelegraph.com/news/cardano-foundation-cancels-annual-conference-after-failed-funding-vote?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound">Article</a></div>
+            </article>
+<article class="card">
+              <h3><a href="https://www.coindesk.com/markets/2026/06/01/xrp-drops-to-usd1-32-as-sellers-overpower-exchange-outflows">XRP drops to $1.32 as sellers overpower exchange outflows</a></h3>
+              <p>XRP slid to its weakest level in more than three months as heavy selling overpowered signs of exchange outflows, leaving the market stuck between two competing signals. Tokens moving off exchanges usually point to accumulation, but price action is saying sellers still have control whenever XRP tries to recover.</p>
+              <dl>
+                <div><dt>Source</dt><dd>CoinDesk</dd></div>
+                <div><dt>Category</dt><dd>market-structure</dd></div>
+                <div><dt>Published</dt><dd>2026-06-01</dd></div>
+              </dl>
+              <div class="links"><a href="https://www.coindesk.com/markets/2026/06/01/xrp-drops-to-usd1-32-as-sellers-overpower-exchange-outflows">Article</a></div>
+            </article>
+<article class="card">
+              <h3><a href="https://www.coindesk.com/tech/2026/06/01/three-sui-mainnet-halts-in-48-hours-traced-to-an-upgrade-bug-by-developers">Three Sui mainnet halts in 48 hours traced to an upgrade bug by developers</a></h3>
+              <p>A new feature shipped in Sui&#x27;s v1.72 release exposed an edge case in the Layer-1 blockchain&#x27;s gas-charging logic that halted mainnet three separate times across May 28 and May 29, with each fix either triggering or exposing the next failure, the Sui Foundation said in a post-mortem published Sunday . The first outage.</p>
+              <dl>
+                <div><dt>Source</dt><dd>CoinDesk</dd></div>
+                <div><dt>Category</dt><dd>market-structure</dd></div>
+                <div><dt>Published</dt><dd>2026-06-01</dd></div>
+              </dl>
+              <div class="links"><a href="https://www.coindesk.com/tech/2026/06/01/three-sui-mainnet-halts-in-48-hours-traced-to-an-upgrade-bug-by-developers">Article</a></div>
+            </article>
+<article class="card">
+              <h3><a href="https://www.theblock.co/post/403135/coinbase-launches-indian-rupee-rails?utm_source=rss&amp;utm_medium=rss">Coinbase launches Indian rupee rails with perps access in expansion push</a></h3>
+              <p>The Nasdaq-listed company said it has established INR order books to provide dedicated liquidity for users in the country.</p>
+              <dl>
+                <div><dt>Source</dt><dd>The Block</dd></div>
+                <div><dt>Category</dt><dd>l1-l2-infra</dd></div>
+                <div><dt>Published</dt><dd>2026-06-01</dd></div>
+              </dl>
+              <div class="links"><a href="https://www.theblock.co/post/403135/coinbase-launches-indian-rupee-rails?utm_source=rss&amp;utm_medium=rss">Article</a></div>
+            </article>
+<article class="card">
+              <h3><a href="https://www.theblock.co/post/403128/the-funding-how-crypto-hedge-funds-are-navigating-weak-markets?utm_source=rss&amp;utm_medium=rss">The Funding: How crypto hedge funds are navigating weak markets</a></h3>
+              <p>As crypto markets remain weak, fund managers say asset selection, fundamentals, and alpha matter more than ever.</p>
+              <dl>
+                <div><dt>Source</dt><dd>The Block</dd></div>
+                <div><dt>Category</dt><dd>funding-ma</dd></div>
+                <div><dt>Published</dt><dd>2026-06-01</dd></div>
+              </dl>
+              <div class="links"><a href="https://www.theblock.co/post/403128/the-funding-how-crypto-hedge-funds-are-navigating-weak-markets?utm_source=rss&amp;utm_medium=rss">Article</a></div>
+            </article>
+<article class="card">
+              <h3><a href="https://cointelegraph.com/news/sui-major-upgrade-fixes-outage-bugs-restores-network?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound">Sui Foundation says ‘major upgrade’ fixed bugs behind three outages</a></h3>
+              <p>The Sui Network&#x27;s first two outages were caused by bugs introduced in its 1.72 update, while an interim fix deployed to restore the blockchain triggered the third. The Sui Foundation, the nonprofit organization behind the Sui Network, says it has made a “major upgrade” to address issues that caused three recent.</p>
+              <dl>
+                <div><dt>Source</dt><dd>Cointelegraph</dd></div>
+                <div><dt>Category</dt><dd>market-structure</dd></div>
+                <div><dt>Published</dt><dd>2026-06-01</dd></div>
+              </dl>
+              <div class="links"><a href="https://cointelegraph.com/news/sui-major-upgrade-fixes-outage-bugs-restores-network?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound">Article</a></div>
+            </article></div></section>
+    </div>
+    <div class="view" data-view="zh" hidden>
+      <section><h2>覆盖范围</h2><p class="coverage">UTC 日期 2026-06-01 日报。来源：CoinDesk、The Block、Decrypt、Cointelegraph、CoinGecko、DeFiLlama。</p></section>
+      <section><h2>市场 / 链上信号</h2><div class="grid"><article class="card metric">
+              <h3>CoinGecko trending coins</h3>
+              <p>Solstice, Hyperliquid, LAB, Portal, Stellar</p>
+              <dl>
+                <div><dt>来源</dt><dd>CoinGecko</dd></div>
+              </dl>
+              <p>零售关注度和搜索热度代理，不等同于项目质量信号。</p>
+            </article>
+<article class="card metric">
+              <h3>Largest stablecoins</h3>
+              <p>USDT: $187.9B, USDC: $76.0B, USDS: $8.8B</p>
+              <dl>
+                <div><dt>来源</dt><dd>DeFiLlama</dd></div>
+              </dl>
+              <p>稳定币供给可作为加密市场资金管道的流动性代理。</p>
+            </article></div></section>
+      <section><h2>热点新闻</h2><div class="grid"><article class="card">
+              <h3><a href="https://www.coindesk.com/tech/2026/06/01/whitehat-developer-unlocks-usd2-million-stuck-in-a-2016-ethereum-ico-contract-for-nine-years">Whitehat developer unlocks $2 million stuck in a 2016 Ethereum ICO contract for nine years</a></h3>
+              <p>该报道属于安全/攻击主题，原文关注「Whitehat developer unlocks $2 million stuck in a 2016 Ethereum ICO contract for nine years」。摘要要点：A security researcher who goes by 0xflorent worked with the team behind a 2016 Ethereum (ETH) ICO contract to unlock about $2 million in ether that had sat trapped for nine years, in a coordinated whitehat recovery that exploited an integer-overflow flaw the original developers had never patched. The contract belongs.</p>
+              <dl>
+                <div><dt>来源</dt><dd>CoinDesk</dd></div>
+                <div><dt>分类</dt><dd>安全/攻击</dd></div>
+                <div><dt>发布时间</dt><dd>2026-06-01</dd></div>
+              </dl>
+              <div class="links"><a href="https://www.coindesk.com/tech/2026/06/01/whitehat-developer-unlocks-usd2-million-stuck-in-a-2016-ethereum-ico-contract-for-nine-years">原文</a></div>
+            </article>
+<article class="card">
+              <h3><a href="https://www.coindesk.com/markets/2026/06/01/bitcoin-extends-slide-as-spot-etf-outflows-hit-a-record-while-wall-street-rips-on-ai">Bitcoin extends slide as spot ETF outflows hit a record while Wall Street rips on AI</a></h3>
+              <p>该报道属于监管/执法主题，原文关注「Bitcoin extends slide as spot ETF outflows hit a record while Wall Street rips on AI」。摘要要点：A record 10-session, $2.97 billion outflow streak from spot bitcoin ETFs and a fresh rally in oil prices on stalling U.S.-Iran ceasefire talks have kept bitcoin BTC $ 73,038.00 and the wider crypto market under pressure even as Wall Street&#x27;s AI trade pushed global equities to new records in Asian trading Monday. The.</p>
+              <dl>
+                <div><dt>来源</dt><dd>CoinDesk</dd></div>
+                <div><dt>分类</dt><dd>监管/执法</dd></div>
+                <div><dt>发布时间</dt><dd>2026-06-01</dd></div>
+              </dl>
+              <div class="links"><a href="https://www.coindesk.com/markets/2026/06/01/bitcoin-extends-slide-as-spot-etf-outflows-hit-a-record-while-wall-street-rips-on-ai">原文</a></div>
+            </article>
+<article class="card">
+              <h3><a href="https://www.coindesk.com/markets/2026/06/01/aave-overhauls-listing-standards-after-usd230-million-rseth-exploit-exposed-bridge-risks">Aave overhauls listing standards after $230 Million rsETH exploit exposed bridge risks</a></h3>
+              <p>该报道属于安全/攻击主题，原文关注「Aave overhauls listing standards after $230 Million rsETH exploit exposed bridge risks」。摘要要点：The most expensive DeFi attack of 2026 began with KelpDAO&#x27;s restaked ether (rsETH) bridge, not a bug in Aave&#x27;s code. That, the lending protocol argues in an official postmortem published this week , is precisely why the industry needs to rethink how it measures risk.</p>
+              <dl>
+                <div><dt>来源</dt><dd>CoinDesk</dd></div>
+                <div><dt>分类</dt><dd>安全/攻击</dd></div>
+                <div><dt>发布时间</dt><dd>2026-06-01</dd></div>
+              </dl>
+              <div class="links"><a href="https://www.coindesk.com/markets/2026/06/01/aave-overhauls-listing-standards-after-usd230-million-rseth-exploit-exposed-bridge-risks">原文</a></div>
+            </article>
+<article class="card">
+              <h3><a href="https://www.coindesk.com/markets/2026/06/01/citi-predicts-the-tokenized-securities-market-will-grow-to-usd5-5-trillion-by-2030">Citi predicts the tokenized securities market will grow to $5.5 trillion by 2030</a></h3>
+              <p>该报道属于市场结构主题，原文关注「Citi predicts the tokenized securities market will grow to $5.5 trillion by 2030」。摘要要点：Putting real-world investments onchain, a process called tokenization, is moving out of the testing phase and into everyday business. Citi’s new report Tokenization 2030: Wall Street On-Chain shared with CoinDesk ahead of Proof of Talk in Paris, shows that the global market for thse digital investments sits at just.</p>
+              <dl>
+                <div><dt>来源</dt><dd>CoinDesk</dd></div>
+                <div><dt>分类</dt><dd>市场结构</dd></div>
+                <div><dt>发布时间</dt><dd>2026-06-01</dd></div>
+              </dl>
+              <div class="links"><a href="https://www.coindesk.com/markets/2026/06/01/citi-predicts-the-tokenized-securities-market-will-grow-to-usd5-5-trillion-by-2030">原文</a></div>
+            </article>
+<article class="card">
+              <h3><a href="https://cointelegraph.com/news/crypto-exploit-losses-fall-by-90-in-may-to-68m-certik?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound">Crypto exploit losses in May fall 90% over month to $68M: CertiK</a></h3>
+              <p>该报道属于安全/攻击主题，原文关注「Crypto exploit losses in May fall 90% over month to $68M: CertiK」。摘要要点：CertiK says May is the third month so far in 2026 to record crypto losses under $100 million. Losses from exploits of crypto platforms fell to $68.3 million in May, down almost 90% from the $650 million lost in April, says crypto security company CertiK.</p>
+              <dl>
+                <div><dt>来源</dt><dd>Cointelegraph</dd></div>
+                <div><dt>分类</dt><dd>安全/攻击</dd></div>
+                <div><dt>发布时间</dt><dd>2026-06-01</dd></div>
+              </dl>
+              <div class="links"><a href="https://cointelegraph.com/news/crypto-exploit-losses-fall-by-90-in-may-to-68m-certik?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound">原文</a></div>
+            </article>
+<article class="card">
+              <h3><a href="https://cointelegraph.com/news/whitehat-helps-recover-2m-from-2016-ico-smart-contract?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound">White hat hacker recovers $2M from faulty 2016 ICO smart contract</a></h3>
+              <p>该报道属于安全/攻击主题，原文关注「White hat hacker recovers $2M from faulty 2016 ICO smart contract」。摘要要点：A white-hat hacker has helped the creators of Hong Coin by showing them how to exploit a flawed admin function on a smart contract and ultimately refund investors after a decade. A pseudonymous white hat hacker has helped recover $2 million worth of Ether locked in a faulty initial coin offering (ICO) smart contract.</p>
+              <dl>
+                <div><dt>来源</dt><dd>Cointelegraph</dd></div>
+                <div><dt>分类</dt><dd>安全/攻击</dd></div>
+                <div><dt>发布时间</dt><dd>2026-06-01</dd></div>
+              </dl>
+              <div class="links"><a href="https://cointelegraph.com/news/whitehat-helps-recover-2m-from-2016-ico-smart-contract?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound">原文</a></div>
+            </article>
+<article class="card">
+              <h3><a href="https://cointelegraph.com/news/wintermute-is-entering-prediction-markets-as-a-liquidity-provider?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound">Wintermute to bring liquidity to booming prediction markets sector</a></h3>
+              <p>该报道属于市场结构主题，原文关注「Wintermute to bring liquidity to booming prediction markets sector」。摘要要点：Wintermute said it will provide “two-sided markets across event contracts on leading venues,” but did not specify what platforms it was trading on. Crypto liquidity provider and trading company Wintermute says it is providing liquidity on prediction markets as the industry continues to expand.</p>
+              <dl>
+                <div><dt>来源</dt><dd>Cointelegraph</dd></div>
+                <div><dt>分类</dt><dd>市场结构</dd></div>
+                <div><dt>发布时间</dt><dd>2026-06-01</dd></div>
+              </dl>
+              <div class="links"><a href="https://cointelegraph.com/news/wintermute-is-entering-prediction-markets-as-a-liquidity-provider?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound">原文</a></div>
+            </article>
+<article class="card">
+              <h3><a href="https://cointelegraph.com/news/nydig-ibit-whale-exit-directional-bitcoin-trade?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound">NYDIG suggests $1.3B IBIT sale was whale exiting directional trade</a></h3>
+              <p>该报道属于监管/执法主题，原文关注「NYDIG suggests $1.3B IBIT sale was whale exiting directional trade」。摘要要点：NYDIG’s Greg Cipolaro says a sale below market price and giving up millions of dollars for immediate execution indicates a large directional holder exited a trade on BlackRock’s IBIT last week. A $1.26 billion block trade in BlackRock’s iShares Bitcoin Trust (IBIT) made last week was likely a whale making a quick.</p>
+              <dl>
+                <div><dt>来源</dt><dd>Cointelegraph</dd></div>
+                <div><dt>分类</dt><dd>监管/执法</dd></div>
+                <div><dt>发布时间</dt><dd>2026-06-01</dd></div>
+              </dl>
+              <div class="links"><a href="https://cointelegraph.com/news/nydig-ibit-whale-exit-directional-bitcoin-trade?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound">原文</a></div>
+            </article>
+<article class="card">
+              <h3><a href="https://cointelegraph.com/news/cardano-foundation-cancels-annual-conference-after-failed-funding-vote?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound">Cardano Foundation cancels annual conference after failed funding vote</a></h3>
+              <p>该报道属于监管/执法主题，原文关注「Cardano Foundation cancels annual conference after failed funding vote」。摘要要点：Cardano Foundation has failed at its second attempt to secure funding from Cardano’s community to fund its annual conference. The Cardano Foundation has canceled its 2026 annual conference after its governance community shot down a revised proposal seeking to fund the event with treasury tokens.</p>
+              <dl>
+                <div><dt>来源</dt><dd>Cointelegraph</dd></div>
+                <div><dt>分类</dt><dd>监管/执法</dd></div>
+                <div><dt>发布时间</dt><dd>2026-06-01</dd></div>
+              </dl>
+              <div class="links"><a href="https://cointelegraph.com/news/cardano-foundation-cancels-annual-conference-after-failed-funding-vote?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound">原文</a></div>
+            </article>
+<article class="card">
+              <h3><a href="https://www.coindesk.com/markets/2026/06/01/xrp-drops-to-usd1-32-as-sellers-overpower-exchange-outflows">XRP drops to $1.32 as sellers overpower exchange outflows</a></h3>
+              <p>该报道属于市场结构主题，原文关注「XRP drops to $1.32 as sellers overpower exchange outflows」。摘要要点：XRP slid to its weakest level in more than three months as heavy selling overpowered signs of exchange outflows, leaving the market stuck between two competing signals. Tokens moving off exchanges usually point to accumulation, but price action is saying sellers still have control whenever XRP tries to recover.</p>
+              <dl>
+                <div><dt>来源</dt><dd>CoinDesk</dd></div>
+                <div><dt>分类</dt><dd>市场结构</dd></div>
+                <div><dt>发布时间</dt><dd>2026-06-01</dd></div>
+              </dl>
+              <div class="links"><a href="https://www.coindesk.com/markets/2026/06/01/xrp-drops-to-usd1-32-as-sellers-overpower-exchange-outflows">原文</a></div>
+            </article>
+<article class="card">
+              <h3><a href="https://www.coindesk.com/tech/2026/06/01/three-sui-mainnet-halts-in-48-hours-traced-to-an-upgrade-bug-by-developers">Three Sui mainnet halts in 48 hours traced to an upgrade bug by developers</a></h3>
+              <p>该报道属于市场结构主题，原文关注「Three Sui mainnet halts in 48 hours traced to an upgrade bug by developers」。摘要要点：A new feature shipped in Sui&#x27;s v1.72 release exposed an edge case in the Layer-1 blockchain&#x27;s gas-charging logic that halted mainnet three separate times across May 28 and May 29, with each fix either triggering or exposing the next failure, the Sui Foundation said in a post-mortem published Sunday . The first outage.</p>
+              <dl>
+                <div><dt>来源</dt><dd>CoinDesk</dd></div>
+                <div><dt>分类</dt><dd>市场结构</dd></div>
+                <div><dt>发布时间</dt><dd>2026-06-01</dd></div>
+              </dl>
+              <div class="links"><a href="https://www.coindesk.com/tech/2026/06/01/three-sui-mainnet-halts-in-48-hours-traced-to-an-upgrade-bug-by-developers">原文</a></div>
+            </article>
+<article class="card">
+              <h3><a href="https://www.theblock.co/post/403135/coinbase-launches-indian-rupee-rails?utm_source=rss&amp;utm_medium=rss">Coinbase launches Indian rupee rails with perps access in expansion push</a></h3>
+              <p>该报道属于L1/L2 基础设施主题，原文关注「Coinbase launches Indian rupee rails with perps access in expansion push」。摘要要点：The Nasdaq-listed company said it has established INR order books to provide dedicated liquidity for users in the country.</p>
+              <dl>
+                <div><dt>来源</dt><dd>The Block</dd></div>
+                <div><dt>分类</dt><dd>L1/L2 基础设施</dd></div>
+                <div><dt>发布时间</dt><dd>2026-06-01</dd></div>
+              </dl>
+              <div class="links"><a href="https://www.theblock.co/post/403135/coinbase-launches-indian-rupee-rails?utm_source=rss&amp;utm_medium=rss">原文</a></div>
+            </article>
+<article class="card">
+              <h3><a href="https://www.theblock.co/post/403128/the-funding-how-crypto-hedge-funds-are-navigating-weak-markets?utm_source=rss&amp;utm_medium=rss">The Funding: How crypto hedge funds are navigating weak markets</a></h3>
+              <p>该报道属于融资/M&amp;A主题，原文关注「The Funding: How crypto hedge funds are navigating weak markets」。摘要要点：As crypto markets remain weak, fund managers say asset selection, fundamentals, and alpha matter more than ever.</p>
+              <dl>
+                <div><dt>来源</dt><dd>The Block</dd></div>
+                <div><dt>分类</dt><dd>融资/M&amp;A</dd></div>
+                <div><dt>发布时间</dt><dd>2026-06-01</dd></div>
+              </dl>
+              <div class="links"><a href="https://www.theblock.co/post/403128/the-funding-how-crypto-hedge-funds-are-navigating-weak-markets?utm_source=rss&amp;utm_medium=rss">原文</a></div>
+            </article>
+<article class="card">
+              <h3><a href="https://cointelegraph.com/news/sui-major-upgrade-fixes-outage-bugs-restores-network?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound">Sui Foundation says ‘major upgrade’ fixed bugs behind three outages</a></h3>
+              <p>该报道属于市场结构主题，原文关注「Sui Foundation says ‘major upgrade’ fixed bugs behind three outages」。摘要要点：The Sui Network&#x27;s first two outages were caused by bugs introduced in its 1.72 update, while an interim fix deployed to restore the blockchain triggered the third. The Sui Foundation, the nonprofit organization behind the Sui Network, says it has made a “major upgrade” to address issues that caused three recent.</p>
+              <dl>
+                <div><dt>来源</dt><dd>Cointelegraph</dd></div>
+                <div><dt>分类</dt><dd>市场结构</dd></div>
+                <div><dt>发布时间</dt><dd>2026-06-01</dd></div>
+              </dl>
+              <div class="links"><a href="https://cointelegraph.com/news/sui-major-upgrade-fixes-outage-bugs-restores-network?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound">原文</a></div>
+            </article></div></section>
+    </div>
+  </main>
+  <footer>
+    <p data-lang="en">Generated 2026-06-01T08:24:15Z. News and market data are weak signals; this is a triage feed, not an endorsement.</p>
+    <p data-lang="zh" hidden>生成时间：2026-06-01T08:24:15Z。新闻和市场数据都是弱信号；本页面用于初筛，不代表推荐或背书。</p>
+  </footer>
+  <script>
+    const STORAGE_KEY = 'openclaw-report-language';
+    const buttons = Array.from(document.querySelectorAll('[data-switch]'));
+    const views = Array.from(document.querySelectorAll('[data-view]'));
+    const localized = Array.from(document.querySelectorAll('[data-lang]'));
+    function normalizeLanguage(lang) { return lang === 'zh' ? 'zh' : 'en'; }
+    function setLanguage(lang, persist = true) {
+      lang = normalizeLanguage(lang);
+      document.documentElement.lang = lang === 'zh' ? 'zh-Hans' : 'en';
+      buttons.forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.switch === lang)));
+      views.forEach((view) => view.hidden = view.dataset.view !== lang);
+      localized.forEach((node) => node.hidden = node.dataset.lang !== lang);
+      if (persist) { localStorage.setItem(STORAGE_KEY, lang); }
+    }
+    buttons.forEach((button) => button.addEventListener('click', () => setLanguage(button.dataset.switch)));
+    setLanguage(localStorage.getItem(STORAGE_KEY), false);
+  </script>
+</body>
+</html>
