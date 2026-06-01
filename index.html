@@ -607,16 +607,25 @@
     <p data-lang="zh" hidden>生成时间：2026-06-01T05:37:59Z。热度和讨论量只是弱信号；本页面用于初筛，不代表推荐或背书。</p>
   </footer>
   <script>
+    const STORAGE_KEY = 'openclaw-report-language';
     const buttons = Array.from(document.querySelectorAll('[data-switch]'));
     const views = Array.from(document.querySelectorAll('[data-view]'));
     const localized = Array.from(document.querySelectorAll('[data-lang]'));
-    function setLanguage(lang) {
+    function normalizeLanguage(lang) {
+      return lang === 'zh' ? 'zh' : 'en';
+    }
+    function setLanguage(lang, persist = true) {
+      lang = normalizeLanguage(lang);
       document.documentElement.lang = lang === 'zh' ? 'zh-Hans' : 'en';
       buttons.forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.switch === lang)));
       views.forEach((view) => view.hidden = view.dataset.view !== lang);
       localized.forEach((node) => node.hidden = node.dataset.lang !== lang);
+      if (persist) {
+        localStorage.setItem(STORAGE_KEY, lang);
+      }
     }
     buttons.forEach((button) => button.addEventListener('click', () => setLanguage(button.dataset.switch)));
+    setLanguage(localStorage.getItem(STORAGE_KEY), false);
   </script>
 </body>
 </html>
